@@ -80,6 +80,20 @@ vim.opt.colorcolumn = "80"
 vim.g.mapleader = " "
 '@ | Set-Content -Encoding UTF8 -Path $set
 
+# set.lua for neovide settings
+@'
+if vim.g.neovide then
+	vim.g.neovide_refresh_rate = 144
+	vim.g.neovide_no_idle = true
+
+	vim.g.neovide_transparency = 0.95
+	vim.g.neovide_floating_blur_amount_x = 2.0
+	vim.g.neovide_floating_blur_amount_y = 2.0
+
+	vim.g.neovide_cursor_animation_length = 0.03
+	vim.g.neovide_cursor_trail_length = 0.05
+'@ | Add-Content -Encoding UTF8 -Path $set
+
 # Set up packer.lua
 @'
 local fn = vim.fn
@@ -131,6 +145,7 @@ require'nvim-treesitter.configs'.setup {
   parser_install_dir = vim.fn.stdpath("data") .. "/site",
 }
 '@ | Set-Content -Encoding UTF8 -Path $treesitter
+
 
 
 # Final powershell moves

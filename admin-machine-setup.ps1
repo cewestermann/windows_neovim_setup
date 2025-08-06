@@ -48,6 +48,15 @@ Add-Type $code -ErrorAction SilentlyContinue | Out-Null
 [UIntPtr]$result = [UIntPtr]::Zero
 try { [void][Win32]::SendMessageTimeout([IntPtr]0xffff, 0x1A, [UIntPtr]0, "Environment", 2, 5000, [ref]$result) } catch {}
 
+# Install Neovide
+winget install Neovide.Neovide --scope machine @common
+
 Write-Host "`nDone. Open a **new** terminal and run: clang --version" -ForegroundColor Green 
+
+
+
+
+
+
 
 
