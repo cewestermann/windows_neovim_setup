@@ -92,6 +92,7 @@ if vim.g.neovide then
 
 	vim.g.neovide_cursor_animation_length = 0.03
 	vim.g.neovide_cursor_trail_length = 0.05
+end
 '@ | Add-Content -Encoding UTF8 -Path $set
 
 # Set up packer.lua
@@ -154,3 +155,4 @@ nvim --headless "+qall" 2>$null
 nvim --headless "+PackerSync" "+TSUpdateSync" "+qall"
 
 Write-Host "`nAll set. Parsers are in: $site_dir\parser"
+
