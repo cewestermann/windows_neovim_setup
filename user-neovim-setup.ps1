@@ -150,10 +150,13 @@ require'nvim-treesitter.configs'.setup {
 
 
 # Final powershell moves
-nvim --headless "+qall" 2>$null
+nvim --headless `
+	-c "autocmd User PackerComplete quitall" `
+ 	-c "PackerSync"
 
-nvim --headless "+PackerSync" "+TSUpdateSync" "+qall"
+nvim --headless "+TSUpdateSync" "+qall"
 
 Write-Host "`nAll set. Parsers are in: $site_dir\parser"
+
 
 
