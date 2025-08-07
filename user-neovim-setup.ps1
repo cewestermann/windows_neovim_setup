@@ -86,7 +86,7 @@ if vim.g.neovide then
 	vim.g.neovide_refresh_rate = 144
 	vim.g.neovide_no_idle = true
 
-	vim.g.neovide_transparency = 0.95
+	vim.g.neovide_opacity = 1.0
 	vim.g.neovide_floating_blur_amount_x = 2.0
 	vim.g.neovide_floating_blur_amount_y = 2.0
 
@@ -155,4 +155,5 @@ nvim --headless "+qall" 2>$null
 nvim --headless "+PackerSync" "+TSUpdateSync" "+qall"
 
 Write-Host "`nAll set. Parsers are in: $site_dir\parser"
+
 
